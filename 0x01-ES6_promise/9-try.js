@@ -8,6 +8,5 @@ export default function guardrail(mathFunction) {
   } finally {
     array.push('Guardrail was processed');
   }
-  
   return array;
 }
