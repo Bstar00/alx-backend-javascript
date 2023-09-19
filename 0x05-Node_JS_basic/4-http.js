@@ -1,19 +1,15 @@
 const http = require('http');
 
-// Create an HTTP server
-const app = http.createServer((req, res) => {
-  // Set the HTTP response header with a status code of 200 (OK)
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
+const hostname = '127.0.0.1';
+const port = 1245;
 
-  // Write the response body
-  res.end('Hello Holberton School!\n');
+const app = http.createServer((request, response) => {
+  response.statusCode = 200;
+  response.setHeader('Content-Type', 'text/plain');
+  response.end('Hello Holberton School!');
 });
 
-// Listen on port 1245
-const PORT = 1245;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(port, hostname, () => {
 });
 
-// Export the app so it can be used in other modules
 module.exports = app;
